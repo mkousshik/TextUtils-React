@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+// haha
 
 function App() {
   const [mode, setMode] = useState('light');
