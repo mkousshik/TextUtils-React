@@ -45,14 +45,16 @@ export default function TextForm(props){
     setEmail(emails || []);
     if(emails){
       setShowtable(true);
+      // props.showAlert("", 'warning')
     }
     else{
+      props.showAlert("No Emails in this text.", 'warning')
       setShowtable(false);
     }
   }
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(text); 
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to Clipboard!", "success");
   }
  
@@ -70,7 +72,7 @@ export default function TextForm(props){
   return (
     <>
       <div className='container' style={{color:props.mode === 'dark'?'white':'black'}}>
-          <h3>{props.heading}</h3>
+          <h3 className="mb-3">{props.heading}</h3>
           <textarea className="form-control my-2 my-2" style={{backgroundColor:props.mode === 'dark'?'#586090':'white', color:props.mode === 'dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
 
           <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleUpClick}>Convet to Uppercase</button>
@@ -84,11 +86,10 @@ export default function TextForm(props){
       <div className="container " style={{color:props.mode === 'dark'?'white':'black'}}>
         <h2>Text Summary</h2>
         <p>{wordCount} words and {text.length} characters</p>
-        <p>Need time to read : {0.008 * text.split(' ').length} minute </p>
+        <p>Need time to read : {0.008 * text.split(' ').filter(word => word !== '').length} minute </p>
         <h5>Preview</h5>
         <p>{text.length > 0 ? text : "Enter something in the textbox above to preview it here." }</p>
   
-
         {
           showtable && (
             <div className="container">

@@ -2,18 +2,19 @@ import React from "react";
 
 export default function About(props) {
   let k = {
-    backgroundColor: props.mode === "dark" ? "#586090" : "white",
+    backgroundColor: props.mode === "dark" ? "rgb(88, 96, 144)" : "white",
     color: props.mode === "dark" ? "white" : "black",
-  };
+};
   return (
     <>
+      <h1 style={{color: props.mode === "dark" ? "white" : "black"}} >About Us</h1>
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
-          <div className="accordion-body my-1" >
-            TextUtils is a versatile text manipulation application designed to
+          <div className="accordion-body" style={k} >
+            <strong>TextUtils is a versatile text manipulation application designed to
             facilitate various operations on textual data. With a user-friendly
             interface, it offers several functions catering to the needs of
-            writers, editors, students, and professionals alike.
+            writers, editors, students, and professionals alike.</strong>
             
           </div>
         </div>
@@ -27,6 +28,7 @@ export default function About(props) {
               data-bs-target="#collapseOne"
               aria-expanded="false"
               aria-controls="collapseOne"
+              style={k}
             >
               1.Text Analysis
             </button>
@@ -54,6 +56,7 @@ export default function About(props) {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
+              style={k}
             >
               2.Text Transformation
             </button>
@@ -80,6 +83,7 @@ export default function About(props) {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
+              style={k}
             >
             3.Text Sharing
             </button>
