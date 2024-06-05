@@ -71,14 +71,14 @@ export default function TextForm(props){
     <>
       <div className='container' style={{color:props.mode === 'dark'?'white':'black'}}>
           <h3>{props.heading}</h3>
-          <textarea className="form-control my-2" style={{backgroundColor:props.mode === 'dark'?'#586090':'white', color:props.mode === 'dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+          <textarea className="form-control my-2 my-2" style={{backgroundColor:props.mode === 'dark'?'#586090':'white', color:props.mode === 'dark'?'white':'black'}} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
 
-          <button  className="btn btn-primary" onClick={handleUpClick}>Convet to Uppercase</button>
-          <button  className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to LowerCase</button>
-          <button  className="btn btn-primary mx-2" onClick={handleClear}>ClearText</button>
-          <button  className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Space</button>
-          <button  className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
-          <button  className="btn btn-primary mx-2" value = "email" onClick={extractEmails}>Extract Email</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleUpClick}>Convet to Uppercase</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleLoClick}>Convert to LowerCase</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleClear}>ClearText</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleExtraSpaces}>Remove Extra Space</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} onClick={handleCopy}>Copy Text</button>
+          <button  className="btn btn-primary mx-2 my-2" disabled={text.length === 0} value = "email" onClick={extractEmails}>Extract Email</button>
       </div>
       <br />
       <div className="container " style={{color:props.mode === 'dark'?'white':'black'}}>
